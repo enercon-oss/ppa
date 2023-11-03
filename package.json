@@ -1,0 +1,17 @@
+{
+  "name": "@enercon-oss/ppa",
+  "version": "0.0.0",
+  "description": "PPA",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@8.10.2",
+  "engines": {
+    "node": "21.1.0",
+    "pnpm": "8.10.2"
+  },
+  "scripts": {
+    "preinstall": "npx only-allow pnpm"
+  },
+  "author": "Dmitry N. Medvedev <dmitry.medvedev@gmail.com>",
+  "license": "MIT"
+}
