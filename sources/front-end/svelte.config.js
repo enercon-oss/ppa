@@ -7,6 +7,7 @@ const config = {
       out: 'build',
       precompress: false,
       envPrefix: 'CA_',
+      polyfill: false,
     }),
     serviceWorker: {
       register: true,
