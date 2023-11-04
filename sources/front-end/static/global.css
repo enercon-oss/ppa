@@ -55,15 +55,15 @@ body {
 #app {
   display: grid;
   grid-template-columns: 1fr;
-  row-gap: 1rem;
+  row-gap: 0.5rem;
   grid-template-areas:
     'site-header'
     'site-main'
     'site-footer'
   ;
-  grid-template-rows: 5rem 1fr 5rem;
+  grid-template-rows: auto 1fr auto;
 
-  background-color: whitesmoke;
+  background-color: var(--theme-white);
 }
 
 body, #app {
@@ -75,21 +75,16 @@ main {
   display: flex;
   flex-direction: column;
   row-gap: 2vh;
-
-  background-color: yellowgreen;
 }
 
 svg {
   pointer-events: none !important;
 }
 
-/* button {
-  background-color: var(--theme-light_gray);
-  border: none;
-  border-radius: max(0.125vh, 0.125vw);
-  padding: max(0.5vh, 0.5vw);
-  max-height: 6rem;
-} */
+header, footer {
+  color: var(--theme-white);
+  background-color: var(--theme-dark_gray);
+}
 
 button:active {
   background-color: var(--theme-black);
