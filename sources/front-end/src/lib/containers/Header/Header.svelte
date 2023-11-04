@@ -24,11 +24,14 @@
 
 <style>
   header {
+    grid-area: site-header;
     display: grid;
     grid-template-areas:
       'header-title' 
       'header-nav'
     ;
+    position: sticky;
+    top: 0;
     background-color: azure;
 
     & > h1 {

@@ -42,15 +42,14 @@
   }
 }
 
-html, body {
-  height: auto;
-  background-color: brown;
-}
-
 html {
   font-family: var(--main-font-family);
   background-color: var(--main-background-color);
   color: var(--main-color);
+}
+
+body {
+  background-color: brown;
 }
 
 #app {
@@ -62,11 +61,13 @@ html {
     'site-main'
     'site-footer'
   ;
-  /* grid-template-rows: 5rem 100% auto; */
-  grid-template-rows: 10vh 1fr auto;
-  /* min-height: 100%; */
+  grid-template-rows: 5rem 1fr 5rem;
 
   background-color: whitesmoke;
+}
+
+body, #app {
+  min-height: 100vh;
 }
 
 main {
@@ -75,7 +76,7 @@ main {
   flex-direction: column;
   row-gap: 2vh;
 
-  background-color: brown;
+  background-color: yellowgreen;
 }
 
 svg {
