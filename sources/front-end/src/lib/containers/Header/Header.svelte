@@ -31,10 +31,10 @@
       'header-nav'
     ;
     gap: 0.5rem;
-    padding: 0.25rem 0;
     position: sticky;
     top: 0;
     z-index: 1;
+    padding: 0.5rem 0;
 
     & > h1 {
       grid-area: header-title;
