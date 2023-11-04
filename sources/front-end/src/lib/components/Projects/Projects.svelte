@@ -26,6 +26,8 @@
     grid-auto-rows: 1fr;
     min-height: 100%;
     gap: 1rem;
+    width: calc(100% - 0.5rem);
+    margin: 0 auto;
   }
 </style>
 
