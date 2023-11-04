@@ -25,6 +25,10 @@
   button {
     cursor: pointer;
     padding: 0.5rem 1rem;
+  
+    &:active {
+      color: var(--theme-white);
+    }
   }
 </style>
 

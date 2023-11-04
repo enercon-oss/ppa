@@ -30,9 +30,10 @@
       'header-title' 
       'header-nav'
     ;
+    gap: 0.5rem;
+    padding: 0.25rem 0;
     position: sticky;
     top: 0;
-    background-color: azure;
 
     & > h1 {
       grid-area: header-title;
