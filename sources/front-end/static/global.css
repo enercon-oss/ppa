@@ -1,18 +1,18 @@
 :root {
   --main-font-family: "Inter var experimental";
   --main-color: var(--theme-dark_gray);
-  --main-background-color: var(--theme-white);
+  --main-background-color: var(--theme-darkest_white);
   --main-grid-gap: max(0.25vh, 0.25vw);
   --main-border-radius: max(0.25vh, 0.25vw);
 
   --main-button-height: 8vh;
 
-  --header-hight: 6vh; 
-  --main-height: 1fr;
-  --footer-height: var(--header-hight);
-  --footer-background-color: transparent;
+  --header-background-color: var(--theme-dark_gray);
+  --header-color: var(--theme-white);
+  --footer-background-color: var(--header-background-color);
+  --footer-color: var(--header-color);
 
-  --group-height: 20vh;
+  --border-radius: min(0.125vh, 0.125vw);
 
   --theme-icon-svg-color: var(--main-color);
   --transition-timing-function: cubic-bezier(.03,.97,.93,.95);
@@ -44,12 +44,8 @@
 
 html {
   font-family: var(--main-font-family);
-  background-color: var(--main-background-color);
   color: var(--main-color);
-}
-
-body {
-  background-color: brown;
+  background-color: var(--main-background-color);
 }
 
 #app {
@@ -62,8 +58,6 @@ body {
     'site-footer'
   ;
   grid-template-rows: auto 1fr auto;
-
-  background-color: var(--theme-dark_gray);
 }
 
 body, #app {
@@ -81,9 +75,8 @@ svg {
   pointer-events: none !important;
 }
 
-header, footer {
-  color: var(--theme-white);
-  background-color: var(--theme-dark_gray);
+button {
+  font-variant: all-petite-caps;
 }
 
 button:active {

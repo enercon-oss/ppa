@@ -35,6 +35,8 @@
     top: 0;
     z-index: 1;
     padding: 0.5rem 0;
+    background-color: var(--header-background-color);
+    color: var(--header-color);
 
     & > h1 {
       grid-area: header-title;
