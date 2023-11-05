@@ -63,7 +63,7 @@ body {
   ;
   grid-template-rows: auto 1fr auto;
 
-  background-color: var(--theme-white);
+  background-color: var(--theme-dark_gray);
 }
 
 body, #app {
