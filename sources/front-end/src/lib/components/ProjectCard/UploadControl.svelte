@@ -45,9 +45,10 @@
   form {
     display: grid;
     grid-template-columns: 7fr 1fr;
-    grid-template-rows: 1fr;
+    grid-template-rows: 2fr 3px;
     grid-template-areas:
       'name button'
+      'progress progress'
     ;
     column-gap: 1rem;
     padding: 0.5rem; 
@@ -75,6 +76,23 @@
     & > input[type="file"] {
       display: none;
     }
+
+    & > progress {
+      grid-area: progress;
+      width: 100%;
+      height: 3px;
+      appearance: none;
+    }
+
+    & > progress[value]::-webkit-progress-bar {
+      background-color: var(--theme-light_gray_bright) ;
+      border-radius: 2px;
+      /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset; */
+    }
+
+    & > progress[value]::-webkit-progress-value {
+      background-color: var(--theme-orange);
+    }
   }
 </style>
 
@@ -90,4 +108,5 @@
     buttonType="submit"
     on:message={handleOpenFileRequest}
   />
+  <progress value="0" max="100"></progress>
 </form>
