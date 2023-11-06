@@ -18,13 +18,6 @@
 
   
   /**
-   * 
-   * @param e {SubmitEvent}
-   */
-  function handleSubmit(e) {
-    console.log('handleSubmit', e);
-  }
-  /**
    * @param e {CustomEvent}
    */  
   function handleNewProjectCreationRequest(e) {
