@@ -49,7 +49,8 @@
     grid-template-areas:
       'name button'
     ;
-    padding: 0.5rem 1rem;
+    column-gap: 1rem;
+    padding: 0.5rem; 
    
     & > div:nth-child(1) {
       grid-area: name;
@@ -64,6 +65,10 @@
 
       & > div {
         font-size: 1rem;
+      }
+
+      & > :is(label, div) {
+        padding: 0 0.5rem;
       }
     }
 
