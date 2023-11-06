@@ -1,6 +1,7 @@
 <script>
   import Button from "../Button/Button.svelte";
   import StepsLabel from "../StepsLabel/StepsLabel.svelte";
+  import NewProjectCard from "./NewProjectCard.svelte";
   /**
    * @type {string | null | undefined}
    */
@@ -16,14 +17,6 @@
   export let calculations = null;
 
   
-  function handleCreateProjectButtonClick() {
-    if (name === null || typeof name === undefined || name?.length === 0) {
-      return;
-    }
-
-    console.log('handleCreateProjectButtonClick', name);
-  }
-
   /**
    * 
    * @param e {SubmitEvent}
@@ -31,65 +24,28 @@
   function handleSubmit(e) {
     console.log('handleSubmit', e);
   }
+  /**
+   * @param e {CustomEvent}
+   */  
+  function handleNewProjectCreationRequest(e) {
+    const {
+      detail: {
+        name,
+      },
+    } = e;
+
+    console.log('handleNewProjectCreationRequest', name);
+  }
 </script>
 
 <style>
-  article, form {
+  article {
     min-height: 20vh;
     background-color: var(--theme-white);
     gap: 0.5rem;
     border-radius: var(--border-radius);
   }
   
-  form {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr repeat(2, 2fr);
-    grid-template-areas:
-      'title title'
-      'name name'
-      '. button'
-    ;
-    background-color: var(--theme-blue);
-
-    & > .title {
-      grid-area: title;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      color: var(--header-color);
-      background-color: var(--header-background-color);
-    }
-
-    & > .project-name {
-      grid-area: name;
-    }
-
-    & > .button {
-      grid-area: button;
-      align-items: end;
-    }
-
-    & > :is(.project-name, .button) {
-      padding: 0 0.5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    & > div {
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-
-      & > label {
-        color: var(--theme-white);
-        font-size: 0.7rem;
-      }
-    }
-  }
-
   article:hover {
     background-color: #ffffff;
   }
@@ -183,22 +139,7 @@
 </style>
 
 {#if id === null || typeof id === undefined}
-  <form on:submit|preventDefault|stopPropagation={handleSubmit}>
-    <div class="title">create a new project</div>
-    <div class="project-name">
-      <label for="newProjectName-id">project name</label>
-      <input
-        id="newProjectName-id"
-        type="text"
-        name="new-project-name"
-        required
-        bind:value={name}
-      />
-    </div>
-    <div class="button">
-      <Button buttonType="submit" dispatchMessage="create-project" text="create" on:message={handleCreateProjectButtonClick}/>
-    </div>
-  </form>
+    <NewProjectCard on:new-project-name={handleNewProjectCreationRequest}/>
   {:else}  
   <article {id}>
     <div class="project-name">{name}</div>
