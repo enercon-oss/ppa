@@ -133,7 +133,7 @@
 
     & > .upload {
       grid-area: upload;
-      background-color: var(--header-background-color);
+      background-color: var(--theme-light_gray_bright);
       color: var(--header-color);
     }
   }
