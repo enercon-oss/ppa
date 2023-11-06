@@ -33,13 +33,6 @@
 </script>
 
 <style>
-  article {
-    min-height: 20vh;
-    background-color: var(--theme-white);
-    gap: 0.5rem;
-    border-radius: var(--border-radius);
-  }
-  
   article:hover {
     background-color: #ffffff;
   }
@@ -47,12 +40,17 @@
   article {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr 4fr 1fr;
+    grid-template-rows: 1fr auto 1fr;
     grid-template-areas:
       'name name'
       'calc data'
       'upload upload'
     ;
+
+    min-height: 20vh;
+    background-color: var(--theme-white);
+    gap: 0.5rem;
+    border-radius: var(--border-radius);
 
     & > .project-name {
       grid-area: name;
@@ -67,10 +65,10 @@
     & > fieldset {
       display: grid;
       grid-template-columns: 1fr;
-      grid-auto-rows: 1fr;
+      grid-auto-rows: minmax(3rem, 1fr);
       gap: 0.5rem;
-      margin: 0 0.5rem 0.5rem;
-      padding: 0 0.5rem 0.5rem;
+      margin: 0 0.5rem;
+      padding: 0 0.5rem;
       /* border: 1px solid var(--theme-light_gray_bright);
       border-radius: var(--border-radius); */
       border: none;
