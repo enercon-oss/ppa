@@ -35,7 +35,7 @@
 
 <style>
   article, form {
-    min-height: 15rem;
+    min-height: 20vh;
     background-color: var(--theme-white);
     gap: 0.5rem;
     border-radius: var(--border-radius);
