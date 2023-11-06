@@ -1,7 +1,8 @@
 <script>
-  import Button from "../Button/Button.svelte";
+  // import Button from "../Button/Button.svelte";
   import StepsLabel from "../StepsLabel/StepsLabel.svelte";
   import NewProjectCard from "./NewProjectCard.svelte";
+  import UploadControl from "./UploadControl.svelte";
   /**
    * @type {string | null | undefined}
    */
@@ -46,10 +47,11 @@
   article {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr 4fr;
+    grid-template-rows: 1fr 4fr 1fr;
     grid-template-areas:
       'name name'
       'calc data'
+      'upload upload'
     ;
 
     & > .project-name {
@@ -128,6 +130,12 @@
     & > .data {
       grid-area: data;
     }
+
+    & > .upload {
+      grid-area: upload;
+      background-color: var(--header-background-color);
+      color: var(--header-color);
+    }
   }
 </style>
 
@@ -148,7 +156,10 @@
         {/if}
     </fieldset>
     <fieldset class="data">
-      <legend>results</legend>
+      <legend>info</legend>
     </fieldset>
+    <div class="upload">
+      <UploadControl />
+    </div>
   </article>
 {/if}
