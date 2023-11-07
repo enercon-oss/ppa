@@ -66,7 +66,7 @@
       display: grid;
       grid-template-columns: 1fr;
       grid-auto-rows: minmax(3rem, 1fr);
-      gap: 0.5rem;
+      gap: 0.125rem;
       margin: 0 0.5rem;
       padding: 0 0.5rem;
       /* border: 1px solid var(--theme-light_gray_bright);
