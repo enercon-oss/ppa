@@ -73,6 +73,8 @@
       border-radius: var(--border-radius); */
       border: none;
       border-top: 1px solid var(--theme-light_gray_bright);
+      max-height: 12rem;
+      overflow-y: auto;
       
       & > legend {
         font-size: 0.85rem;
