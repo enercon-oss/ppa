@@ -28,17 +28,18 @@
 
 <style>
   form {
-    min-height: 20vh;
-    gap: 0.5rem;
-    border-radius: var(--border-radius);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr repeat(2, 2fr);
+    grid-template-rows: 4rem auto 4rem;
     grid-template-areas:
       'title title'
       'name name'
-      '. button'
+      'button button'
     ;
+
+    min-height: 20vh;
+    gap: 0.5rem;
+    border-radius: var(--border-radius);
     background-color: var(--theme-blue);
 
     & > .title {
@@ -65,6 +66,9 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+
+      /* background-color: var(--theme-light_gray_bright); */
+      color: var(--header-color);
     }
 
     & > div {
