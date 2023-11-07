@@ -67,7 +67,6 @@
       flex-direction: column;
       justify-content: center;
 
-      /* background-color: var(--theme-light_gray_bright); */
       color: var(--header-color);
     }
 
