@@ -34,6 +34,13 @@
               },
             },
             {
+              name: 'uncertainty #3',
+              steps: {
+                current: Math.ceil (Math.random() * (30 - 0) + 0),
+                numOfSteps: 30,
+              },
+            },
+            {
               name: 'site calibration',
               steps: {
                 current: Math.ceil (Math.random() * (60 - 0) + 0),
