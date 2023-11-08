@@ -46,7 +46,7 @@
       'calc data'
       'upload upload'
     ;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 2 / 1;
 
     /* min-height: 20vh; */
     background-color: var(--theme-white);
@@ -66,7 +66,7 @@
     & > fieldset {
       display: grid;
       grid-template-columns: 1fr;
-      grid-auto-rows: minmax(4rem, 1fr);
+      grid-template-rows: 4rem;
       gap: 0.125rem;
       margin: 0 0.5rem;
       padding: 0 0.5rem;
@@ -94,6 +94,7 @@
         justify-content: start;
         align-items: center;
         gap: 0.5rem;
+        max-height: 4rem;
 
         & > div {
           display: flex;
