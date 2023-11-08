@@ -40,14 +40,15 @@
   article {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr auto 1fr;
+    grid-template-rows: 4rem auto 4rem;
     grid-template-areas:
       'name name'
       'calc data'
       'upload upload'
     ;
+    aspect-ratio: 16 / 9;
 
-    min-height: 20vh;
+    /* min-height: 20vh; */
     background-color: var(--theme-white);
     gap: 0.5rem;
     border-radius: var(--border-radius);
@@ -65,15 +66,12 @@
     & > fieldset {
       display: grid;
       grid-template-columns: 1fr;
-      grid-auto-rows: minmax(3rem, 1fr);
+      grid-auto-rows: minmax(4rem, 1fr);
       gap: 0.125rem;
       margin: 0 0.5rem;
       padding: 0 0.5rem;
-      /* border: 1px solid var(--theme-light_gray_bright);
-      border-radius: var(--border-radius); */
       border: none;
       border-top: 1px solid var(--theme-light_gray_bright);
-      max-height: 12rem;
       overflow-y: auto;
       
       & > legend {
@@ -96,6 +94,7 @@
         justify-content: start;
         align-items: center;
         gap: 0.5rem;
+        max-height: 4rem;
 
         & > div {
           display: flex;
