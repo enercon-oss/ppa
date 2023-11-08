@@ -94,7 +94,6 @@
         justify-content: start;
         align-items: center;
         gap: 0.5rem;
-        max-height: 4rem;
 
         & > div {
           display: flex;
