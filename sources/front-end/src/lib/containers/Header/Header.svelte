@@ -43,10 +43,11 @@
         column-gap: 1rem;
       }
 
-      & a {
-        font-variant: all-petite-caps;
-        color: var(--theme-white);
-      }
+    }
+
+    & a {
+      font-variant: all-petite-caps;
+      color: var(--theme-white);
     }
 
     & > :is(h1) {
@@ -58,7 +59,7 @@
 </style>
 
 <header>
-  <h1>PPA</h1>
+  <h1><a href="/">PPA</a></h1>
   <nav>
     {#each Object.entries(navigatorItems)  as [key, values]}
       <div id={key} class="nav-row">
