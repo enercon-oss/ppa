@@ -1,25 +1,13 @@
 <script>
-  import NavButton from "$lib/components/NavButton/NavButton.svelte";
   import {
-    ActiveMainComponent,
-  } from '$lib/stores/ActiveMainComponentStore/ActiveMainComponentStore.mjs';
-  import { MainComponentsEnum } from '$lib/constants/MainComponentsEnum.mjs';
+    NavigatorStore,
+  } from '$lib/stores/Navigator/NavigatorStore.mjs';
 
- const mainComponentsEnumEntries = Object.entries(MainComponentsEnum.items);
+  let navigatorItems = {};
 
-  /**
-   * 
-   * @param e {CustomEvent}
-   */
-  function handleClick(e) {
-    const {
-      detail: {
-        value,
-      },
-    } = e;
-
-    ActiveMainComponent.select(value);
-  }
+  const unsubscribeFromNavigatorStore = NavigatorStore.subscribe((currentNavigatorState) => {
+    navigatorItems = currentNavigatorState;
+  });
 </script>
 
 <style>
@@ -44,10 +32,19 @@
 
     & > nav {
       grid-area: header-nav;
-      column-gap: 1rem;
+      display: grid;
+      grid-auto-flow: row;
+      row-gap: 1rem;
+
+      & > .nav-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 1rem;
+      }
     }
 
-    & > :is(h1, nav) {
+    & > :is(h1) {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -58,8 +55,12 @@
 <header>
   <h1>PPA</h1>
   <nav>
-    {#each mainComponentsEnumEntries as [componentName, { description }]}
-      <NavButton dispatchMessage="{componentName}" text="{description}" on:message={handleClick}/>
+    {#each Object.entries(navigatorItems)  as [key, values]}
+      <div id={key} class="nav-row">
+        {#each values as menuItem}
+          <a href="{menuItem.href}">{menuItem.text}</a>
+        {/each}
+      </div>
     {/each}
   </nav>
 </header>
