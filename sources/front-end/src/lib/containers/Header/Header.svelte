@@ -42,6 +42,11 @@
         align-items: center;
         column-gap: 1rem;
       }
+
+      & a {
+        font-variant: all-petite-caps;
+        color: var(--theme-white);
+      }
     }
 
     & > :is(h1) {
